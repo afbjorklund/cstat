@@ -2,7 +2,7 @@
 
 GO = go
 
-all: cstat cstat-to-csv dstat mstat
+all: cstat cstat-to-csv dstat mstat gstat
 
 cstat: ./cmd/cstat/cstat.go
 	$(GO) build -o $@ $^
@@ -11,6 +11,9 @@ dstat: ./cmd/dstat/dstat.go
 	$(GO) build -o $@ $^
 
 mstat: ./cmd/mstat/mstat.go
+	$(GO) build -o $@ $^
+
+gstat: ./cmd/gstat/gstat.go
 	$(GO) build -o $@ $^
 
 cstat-to-csv: ./cmd/cstat-to-csv/cstat-to-csv.go
